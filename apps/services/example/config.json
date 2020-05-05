@@ -1,0 +1,10 @@
+{
+    "basic": {
+        "name": "platform.srv.example",
+        "version": "latest",
+        "address": ":",
+        "register": "127.0.0.1:8500",
+        "ttl": 30,
+        "interval": 10
+    }
+}
