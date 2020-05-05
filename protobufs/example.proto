@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example;
+option go_package = "platform.framework/apps/services/example/service";
+
+service ExampleSrv {
+    rpc Hello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string greeting =1;
+}
