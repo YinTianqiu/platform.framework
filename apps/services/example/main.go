@@ -8,15 +8,15 @@ import (
 )
 
 func main() {
-
-	handle := handler.NewExampleSrv()
 	engine := basicservice.NewBasicService()
-	if err := service.RegisterExampleSrvHandler(engine.Server(), handle); err != nil {
+
+	if err := service.RegisterExampleSrvHandler(engine.Server(), handler.NewExampleSrv()); err != nil {
 		logger.ErrorF("RegisterExampleSrvHandler error: %v", err)
+		return
 	}
+
 	if err := engine.Run(); err != nil {
 		logger.ErrorF("Run error: %v", err)
 		return
 	}
-
 }

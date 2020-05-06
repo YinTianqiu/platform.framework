@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"platform.framework/apps/services/example/service"
-	"platform.framework/common/errors"
+	"platform.framework/common/errs"
 	"platform.framework/library/logger"
 )
 
@@ -20,8 +20,9 @@ func NewExampleSrv() *ExampleSrv {
 func (es *ExampleSrv) Hello(ctx context.Context, req *service.HelloRequest, rsp *service.HelloResponse) error {
 	if req.Name == "" {
 		logger.Error("ExampleSrv Hello request param name is empty string")
-		return errors.NewError(errors.RequestParamIsNull)
+		return errs.NewError(errs.RequestParamIsNull)
 	}
+
 	rsp.Greeting = "hi " + req.Name
 	return nil
 }

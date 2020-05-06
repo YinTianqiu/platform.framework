@@ -1,4 +1,11 @@
-package errors
+package errs
+
+// ReturnFormat 返回格式
+type ReturnFormat struct {
+	Code interface{} `json:"code"`
+	Data interface{} `json:"data"`
+	Msg  string      `json:"msg"`
+}
 
 const (
 	// Success 成功;

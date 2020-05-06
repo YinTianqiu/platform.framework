@@ -1,8 +1,8 @@
 {
     "basic": {
-        "name": "platform.services.example",
+        "name": "platform.gateway.backstage",
         "version": "latest",
-        "address": ":",
+        "address": "0.0.0.0:8888",
         "register": "127.0.0.1:8500",
         "ttl": 30,
         "interval": 10

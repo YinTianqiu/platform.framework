@@ -1,6 +1,7 @@
 package basicgateway
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
@@ -22,6 +23,8 @@ func NewGateway(handler http.Handler) web.Service {
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println(msc)
 
 	srv := web.NewService(
 		web.Name(msc.Basic.Name),
